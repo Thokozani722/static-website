@@ -1,0 +1,90 @@
+// Variables for colors, fonts, etc
+$primary-color: #FF9900; // Amazon orange
+$secondary-color: #131921; // Dark blue
+$font-stack: Arial, sans-serif;
+
+// Mixins for common styles
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+}
+
+// Header styles
+.header {
+  background-color: $secondary-color;
+  color: white;
+  padding: 1rem;
+
+  .logo img {
+    width: 100px;
+  }
+
+  .navigation {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+
+      li a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Main content styles
+.main-content {
+  .hero {
+    background-color: $primary-color;
+    color: white;
+    padding: 2rem;
+    @include flex-center;
+    text-align: center;
+
+    .hero-content {
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        background-color: white;
+        color: $secondary-color;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        &:hover {
+          background-color: darken(white, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Footer styles
+.footer {
+  background-color: $secondary-color;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
